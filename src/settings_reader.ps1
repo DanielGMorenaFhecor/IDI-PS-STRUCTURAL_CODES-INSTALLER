@@ -5,12 +5,23 @@ function Read-Settings {
         [string]$SettingsPath = 'settings.txt'
     )
 
-    $content = Get-Content $SettingsPath
     $h = @{} 
+    # Get all data from the .txt
+    $content = Get-Content $SettingsPath
+
+    # Prepare and add data to the dictionary
     foreach ($c in $content) {
-        if (($c.CompareTo("") -ne 0) -and ($c[0].StartsWith["["] -ne $true)) {
-            $h.Add($c[0], $c[1])
+
+        if (!$c.Contains("=")) {
+            continue
         }
+
+        $k = $c.Split("=")
+        if ($k[0].StartsWith("[")) {
+            continue
+        }
+
+        $h.Add($k[0].Trim(), $k[1].Trim())
     }
 
     return $h
