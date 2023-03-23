@@ -1,0 +1,3 @@
+[submodule "structuralcodes"]
+	path = structuralcodes
+	url = https://github.com/DanielGMorenaFhecor/structuralcodes.git
