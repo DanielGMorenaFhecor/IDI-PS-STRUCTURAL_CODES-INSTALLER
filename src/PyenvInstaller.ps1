@@ -5,12 +5,14 @@ function Install-PyEnv {
     )
 
     # Check if pyenv exists
-    if (!Test-PyEnvExists) {
+    $existsPyenv = Test-PyEnvExists
+    if (!$existsPyenv) {
         DownloadAndInstallContent
     }
 
     # Check if specified python version is installed
-    if (!IsPythonInstalled) {
+    $existsPython = IsPythonInstalled
+    if (!$existsPython) {
         Install-PythonVersion
     }
 }

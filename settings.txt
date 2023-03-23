@@ -2,4 +2,4 @@
 PythonVersion=3.9.13
 
 [InstallLocation]
-InstallLocation=C:\Program Files\structuralcodes
+InstallLocation=C:\Program Files
