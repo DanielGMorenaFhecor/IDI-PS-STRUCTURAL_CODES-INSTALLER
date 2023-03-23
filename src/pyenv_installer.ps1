@@ -10,7 +10,7 @@ function Install-PyEnv {
     }
 
     # Check if specified python version is installed
-    if (!IsPythonVersion-Installed) {
+    if (!IsPythonInstalled) {
         Install-PythonVersion
     }
 }
@@ -30,7 +30,7 @@ function Test-PyEnvExists {
     }
 }
 
-function IsPythonVersion-Installed {
+function IsPythonInstalled {
     Param(
         [string]$Version
     )
@@ -57,5 +57,3 @@ function Install-PythonVersion {
     pyenv install $Version
     Write-Output "Python $Version Installed!"
 }
-
-Install-PythonVersion -Version "3.9.13" | Write-Output
