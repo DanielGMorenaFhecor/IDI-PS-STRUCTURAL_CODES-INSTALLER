@@ -1,2 +1,2 @@
 [Python]
-PythonVersion="3.9.2"
+PythonVersion=3.9.13
